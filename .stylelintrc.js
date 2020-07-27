@@ -1,11 +1,13 @@
 module.exports = {
 	extends: 'stylelint-config-standard',
-	plugins: [ 'stylelint-order' ],
+	plugins: ['stylelint-order'],
 	rules: {
+		'at-rule-no-unknown': ['off'],
+		'selector-type-no-unknown': ['off'],
 		'font-family-no-missing-generic-family-keyword': [
 			true,
 			{
-				ignoreFontFamilies: [ 'iconfont' ],
+				ignoreFontFamilies: ['iconfont'],
 			},
 		],
 		'no-descending-specificity': [
@@ -19,14 +21,14 @@ module.exports = {
 			// 不允许未知的@符号开头的规则 如 @test {}
 			true, // 这里只能是true
 			{
-				ignoreAtRules: [ 'mixin', 'include', 'extend' ], // 忽略关键字 可以写正则
+				ignoreAtRules: ['mixin', 'include', 'extend'], // 忽略关键字 可以写正则
 			},
 		],
 		'property-no-vendor-prefix': [
 			true,
 			{
 				// 不允许兼容前缀
-				ignoreProperties: [ 'box-orient', 'background-clip' ], // 忽略 因为没有名为box-orient的属性
+				ignoreProperties: ['box-orient', 'background-clip'], // 忽略 因为没有名为box-orient的属性
 			},
 		],
 		'order/order': [
